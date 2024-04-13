@@ -1,6 +1,6 @@
 import pandas as pd
 import os
-
+import requests
 # create a dataframe from wikipedia 
 
 def world_population():
@@ -64,3 +64,13 @@ def change_capital_column_loc():
     df.drop('Capital City', axis=1, inplace=True)
     df.to_csv('./data/world_dataframe/world_area_population.csv', index=False)
     
+def add_region():
+    df = pd.read_csv('./data/world_dataframe/world_area_population.csv')
+    html = requests.get('https://www.ucl.ac.uk/global/regional-activity/countries-and-regions-directory').content
+
+    data = pd.read_html(html)
+    df_region = pd.concat([data[0], data[1]], ignore_index=True)
+
+    df = df.merge(df_region, how='left', left_on='Country / dependency', right_on='COUNTRY')
+    df.to_csv('./data/world_dataframe/world_area_population.csv', index=False)
+add_region()
