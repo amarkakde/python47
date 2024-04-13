@@ -25,3 +25,15 @@ def world_population():
 
     df.to_csv('./data/world_dataframe/world_area_population.csv', index=False)
 
+def add_capital_city_to_csv():
+    df = pd.read_csv('./data/world_dataframe/world_area_population.csv')
+    df_capital = pd.read_html('https://geographyfieldwork.com/WorldCapitalCities.htm')
+    df_capital = df_capital[2]
+    
+    df = df.merge(df_capital, left_on='Country / dependency', right_on='Country', how='left')
+
+    df.drop('Country', axis=1, inplace=True)
+    df.to_csv('./data/world_dataframe/world_area_population.csv', index=False)
+
+world_population()
+add_capital_city_to_csv()
