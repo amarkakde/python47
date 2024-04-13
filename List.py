@@ -50,3 +50,14 @@ def multiply_all_item_in_list2(List, multiplyer) -> list:
 
 def find_larget_element_from_list(List) -> int:
     return max(List)
+
+def find_larget_element_from_list2(List):
+    if List:
+        largest_element = List[0]
+
+        for item in List:
+            if largest_element < item:
+                largest_element = item
+        return largest_element
+    else:
+        return None
