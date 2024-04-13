@@ -44,3 +44,9 @@ def multiply_all_item_in_list2(List, multiplyer) -> list:
         newlist.append(item * multiplyer)
 
     return newlist
+
+
+# 3. Write a Python program to find the largest number in a list.
+
+def find_larget_element_from_list(List) -> int:
+    return max(List)
