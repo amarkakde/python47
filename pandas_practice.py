@@ -1,4 +1,5 @@
 import pandas as pd
+import os
 
 # create a dataframe from wikipedia 
 
@@ -18,4 +19,9 @@ def world_population():
     df = df_country_area.merge(df_country_population, left_on='Country / dependency', right_on='Location', how='outer')
     df['Country / dependency'] = df['Country / dependency'].fillna(df['Location'])
 
+    df.drop('Location', axis=1, inplace=True)
+
+    os.mkdir('./data/world_dataframe')
+
+    df.to_csv('./data/world_dataframe/world_area_population.csv', index=False)
 
