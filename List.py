@@ -30,3 +30,9 @@ def sum_of_all_elements_in_the_list3(List):
         print(TypeError)
     else:
         return sum
+
+
+# 2. Write a Python program to multiply all the items in a list.
+
+def multiply_all_item_in_list(List, multiplyer) -> list:
+    return list(map(lambda x: x * multiplyer, List ))
