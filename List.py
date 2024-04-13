@@ -36,3 +36,11 @@ def sum_of_all_elements_in_the_list3(List):
 
 def multiply_all_item_in_list(List, multiplyer) -> list:
     return list(map(lambda x: x * multiplyer, List ))
+
+def multiply_all_item_in_list2(List, multiplyer) -> list:
+    newlist = []
+
+    for item in List:
+        newlist.append(item * multiplyer)
+
+    return newlist
