@@ -58,4 +58,9 @@ def split_area_by_km_mi():
     df.drop(['Total in km2 (mi2)', 'Land in km2 (mi2)', 'Water in km2 (mi2)'], axis=1, inplace=True)
     df.to_csv('./data/world_dataframe/world_area_population.csv', index=False)
 
-split_area_by_km_mi()
+def change_capital_column_loc():
+    df = pd.read_csv('./data/world_dataframe/world_area_population.csv')
+    df.insert(1, 'Capital', df['Capital City'])
+    df.drop('Capital City', axis=1, inplace=True)
+    df.to_csv('./data/world_dataframe/world_area_population.csv', index=False)
+    
