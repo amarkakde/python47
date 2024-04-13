@@ -73,4 +73,3 @@ def add_region():
 
     df = df.merge(df_region, how='left', left_on='Country / dependency', right_on='COUNTRY')
     df.to_csv('./data/world_dataframe/world_area_population.csv', index=False)
-add_region()
