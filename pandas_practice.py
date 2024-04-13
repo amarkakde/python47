@@ -39,3 +39,23 @@ def remove_comma_from_dataframe():
     df = pd.read_csv('./data/world_dataframe/world_area_population.csv')
     df.replace(',', '', regex=True, inplace=True)
     df.to_csv('./data/world_dataframe/world_area_population.csv', index=False)
+
+def split_area_by_km_mi():
+    df = pd.read_csv('./data/world_dataframe/world_area_population.csv')
+    df.replace(r'[()]', '', regex=True, inplace=True)
+    area = df['Total in km2 (mi2)'].str.split(' ',expand=True)
+    df.insert(2, 'Total in km2', area[0])
+    df.insert(3, 'Total in mi2', area[1])
+
+    land = df['Land in km2 (mi2)'].str.split(' ',expand=True)
+    df.insert(6, 'Land in km2', land[0])
+    df.insert(7, 'Land in mi2', land[1])
+
+    water = df['Water in km2 (mi2)'].str.split(' ',expand=True)
+    df.insert(9, 'Water in km2', water[0])
+    df.insert(10, 'Water in mi2', water[1])
+
+    df.drop(['Total in km2 (mi2)', 'Land in km2 (mi2)', 'Water in km2 (mi2)'], axis=1, inplace=True)
+    df.to_csv('./data/world_dataframe/world_area_population.csv', index=False)
+
+split_area_by_km_mi()
