@@ -35,5 +35,7 @@ def add_capital_city_to_csv():
     df.drop('Country', axis=1, inplace=True)
     df.to_csv('./data/world_dataframe/world_area_population.csv', index=False)
 
-world_population()
-add_capital_city_to_csv()
+def remove_comma_from_dataframe():
+    df = pd.read_csv('./data/world_dataframe/world_area_population.csv')
+    df.replace(',', '', regex=True, inplace=True)
+    df.to_csv('./data/world_dataframe/world_area_population.csv', index=False)
