@@ -22,3 +22,11 @@ def sum_of_all_elements_in_the_list2(List):
         print(TypeError)
     else:
         return sum
+    
+def sum_of_all_elements_in_the_list3(List):
+    try:
+        sum = sum(List)
+    except TypeError:
+        print(TypeError)
+    else:
+        return sum
