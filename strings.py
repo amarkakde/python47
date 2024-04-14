@@ -37,3 +37,15 @@ Write a Python program to check if a string contains only digits.
 def check_string_contains_only_digits(string):
 	return True if string.isdigit() else False
 
+
+"""
+Write a Python function that takes a string and returns the reverse of that string.
+"""
+
+def reverse_of_string(string):
+	reverse_string = ''
+
+	for char in reversed(range(len(string))):
+		reverse_string = reverse_string + string[char]
+
+	return reverse_string
