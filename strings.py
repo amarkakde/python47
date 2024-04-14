@@ -49,3 +49,10 @@ def reverse_of_string(string):
 		reverse_string = reverse_string + string[char]
 
 	return reverse_string
+
+"""
+Write a Python program to count the occurrences of a substring in a string.
+"""
+
+def count_of_occurances_of_substring(string, substring):
+	pass
