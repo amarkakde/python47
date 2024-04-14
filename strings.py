@@ -22,3 +22,18 @@ def capitalize_first_letter_of_each_string(string) -> str:
 
 	return ' '.join(words)
 
+"""
+Write a Python function to remove all consecutive duplicates from a given string.
+"""
+
+def remove_consecutive_duplicate_from_string():
+	pass
+
+
+"""
+Write a Python program to check if a string contains only digits.
+"""
+
+def check_string_contains_only_digits(string):
+	return True if string.isdigit() else False
+
