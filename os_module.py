@@ -69,3 +69,8 @@ print(os.getlogin())
 
 # os.getenv() returns environment variable value if present
 print(os.getenv('ALLUSERSPROFILE'))
+
+# os.scandir returns directorys entries
+for val in os.scandir('.'):
+    print(val)
+
