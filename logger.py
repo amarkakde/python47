@@ -23,4 +23,4 @@ def try_logger_first_time():
         logger.log(logging.INFO, msg=f'{value} calculated')
     logger.info('{try_logger_first_time.__name__} function completed')
 
-try_logger_first_time()
+
