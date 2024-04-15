@@ -33,3 +33,24 @@ import os
 # os.name 
 
 print(os.name)
+
+# current working directory
+
+print(f'{os.getcwd()=}')
+
+# current working directory in bytestream
+print(f'{os.getcwdb()=}')
+
+# create a directory
+os.mkdir('sample') 
+
+# delete a directory
+os.rmdir('sample')
+
+# make nested directory
+os.makedirs('ak/ak1/ak2')
+
+# remove nested empty directories 
+os.removedirs('ak/ak1/ak2')
+
+# we will check in shutil module how to remove non empty nested directories
