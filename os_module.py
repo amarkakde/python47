@@ -54,3 +54,18 @@ os.makedirs('ak/ak1/ak2')
 os.removedirs('ak/ak1/ak2')
 
 # we will check in shutil module how to remove non empty nested directories
+
+# list directories returns list of directories in path
+# os.listdir('path')  #<- provide path
+
+# list drives 
+print(os.listdrives())
+
+# os.envion return a dict of environment variables
+print(os.environ)
+
+# os.getlogin()  get logged in user name
+print(os.getlogin())
+
+# os.getenv() returns environment variable value if present
+print(os.getenv('ALLUSERSPROFILE'))
