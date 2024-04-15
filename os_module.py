@@ -73,4 +73,3 @@ print(os.getenv('ALLUSERSPROFILE'))
 # os.scandir returns directorys entries
 for val in os.scandir('.'):
     print(val)
-
