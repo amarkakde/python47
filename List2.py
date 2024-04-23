@@ -32,3 +32,19 @@ def rotate_matrix_clockwise(lst: list[list]) -> list[list]:
 	return  matrix
 
 
+'''
+Write a Python function called find_subarrays_with_sum that 
+takes a list of integers and an integer target_sum as input 
+and returns all subarrays (contiguous sublists) of the input 
+list that sum up to the target_sum
+'''
+
+def subarray(lst:list[int]):
+	for i in range(len(lst)):
+		for j in range(i+1, len(lst)+1):
+			yield lst[i:j]
+
+def find_subarrays_with_sum(lst:list[int], target_sum:int) -> list[list]:
+	lst[:] = [x for x in subarray(lst) if sum(x) == target_sum]
+	return lst
+
