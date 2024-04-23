@@ -48,3 +48,20 @@ def find_subarrays_with_sum(lst:list[int], target_sum:int) -> list[list]:
 	lst[:] = [x for x in subarray(lst) if sum(x) == target_sum]
 	return lst
 
+
+'''
+Write a Python function called largest_subarray_sum that takes a 
+list of integers as input and returns the maximum sum of any 
+contiguous subarray within the list. 
+The function should have a time complexity of O(n) without using any extra space.
+'''
+
+def largest_subarray_sum(lst:list[int]) -> list[list]:
+	lst[:] = [sum(x) for x in subarray(lst)]
+	return max(lst)
+
+
+
+
+
+
