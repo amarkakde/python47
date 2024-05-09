@@ -28,3 +28,28 @@ def good_pairs(nums:list[int]) -> int:
 				count_of_good_pairs += 1
 	
 	return count_of_good_pairs
+
+def make_move(string):
+	character_dictionary = {}
+
+	new_string = []
+	for character in string:
+		if character in character_dictionary:
+			new_string.append(character)
+		else:
+			character_dictionary[character] = character
+	return ''.join(new_string)
+
+def remove_first_occurance(string:str)->str:
+	list_of_characters = list(string)
+	print(list_of_characters)
+
+	last_val = ''
+
+	while string:
+		last_val = string
+		string = make_move(string)
+
+	return last_val
+
+
