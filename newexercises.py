@@ -81,3 +81,14 @@ def highest_altitude(gain:list[int]) -> int:
 			altitude_max = altitude_gain
 	return altitude_max
 
+# frequency of values
+def frequency_of_values(nums:list[int])-> dict:
+	frequency_dictionary = {}
+
+	for number in nums:
+		if number in frequency_dictionary:
+			frequency_dictionary[number] += 1
+		else:
+			frequency_dictionary[number] = 1
+	return frequency_dictionary
+
