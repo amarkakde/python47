@@ -66,3 +66,18 @@ def prefix_sum(nums:list[int]) -> list[int]:
 
 	return new_nums
 
+
+# Highest Altitude
+def highest_altitude(gain:list[int]) -> int:
+	altitude_max = 0
+	altitude_gain = 0
+
+	for index in range(len(gain)):
+		if index == 0:
+			altitude_gain = gain[index]
+		else:
+			altitude_gain += gain[index]
+		if altitude_gain > 0 and altitude_gain > altitude_max:
+			altitude_max = altitude_gain
+	return altitude_max
+
