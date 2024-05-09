@@ -16,3 +16,15 @@ def primes_upto_n(n):
 	return primes
 
 
+def good_pairs(nums:list[int]) -> int:
+	""" good pairs nums[i]==nums[j] when i < j"""
+
+	count_of_good_pairs = 0
+	length_of_list = len(nums)
+
+	for i in range(length_of_list):
+		for j in range(i+1, length_of_list):
+			if nums[i] == nums[j]:
+				count_of_good_pairs += 1
+	
+	return count_of_good_pairs
