@@ -53,3 +53,16 @@ def remove_first_occurance(string:str)->str:
 	return last_val
 
 
+# prefix sum
+
+def prefix_sum(nums:list[int]) -> list[int]:
+	new_nums = []
+
+	for index in range(len(nums)):
+		if index == 0:
+			new_nums.append(nums[index])
+		else:
+			new_nums.append(nums[index] + new_nums[index-1])
+
+	return new_nums
+
